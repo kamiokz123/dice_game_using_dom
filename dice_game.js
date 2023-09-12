@@ -13,7 +13,8 @@ btn6.addEventListener("click",check_result);
 
 function start_game(){
     score=[0,0,0,0]
-    btn5.innerHTML="ROLL DICE"
+    btn5.innerHTML="ROLL DICE";
+    result.innerHTML="result :";
     //  playDiceGame(round)
 
     btn1.addEventListener("click",tog)
