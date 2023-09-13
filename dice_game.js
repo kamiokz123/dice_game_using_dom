@@ -19,6 +19,7 @@ function start_game(){
     result.innerHTML="result :";
     scr.innerHTML=score;
     pl_turn.innerHTML="player-1 turn";
+    turn=1;
     //  playDiceGame(round)
 
     btn1.addEventListener("click",tog)
@@ -114,7 +115,7 @@ function tog(e){
         let pl1= Math.floor((Math.random()*6)+1);
             e.target.innerHTML=`<span>PL-4</span>${pl1}`;
             score[3]+=pl1; 
-            turn=1;   
+            turn=5;   
             pl_turn.innerHTML="Game finished";
             e.target.classList.remove("active");
             result.innerHTML="Game finished click on check result or start new game";
