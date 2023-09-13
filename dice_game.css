@@ -1,27 +1,27 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-.main{
+.main {
     height: 100vh;
     width: 100%;
-    background:linear-gradient(to right,rgb(255,158,255),rgb(140,255,140));
+    background: linear-gradient(to right, rgb(255, 158, 255), rgb(140, 255, 140));
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
     gap: 13px;
-    
+
 }
 
-.main h1{
+.main h1 {
     font-size: 3rem;
-    font-weight:bolder;
+    font-weight: bolder;
 }
 
-.board{
+.board {
     border: 3px solid rgba(0, 0, 0, 0.389);
     width: 400px;
     height: 400px;
@@ -31,7 +31,7 @@
     box-shadow: 10px 10px 10px black;
 }
 
-.b1{
+.b1 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -40,7 +40,7 @@
     align-items: center;
 }
 
-.b2{
+.b2 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -49,24 +49,32 @@
     align-items: center;
 }
 
-.btn{
+.btn {
     width: 80px;
     height: 80px;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     box-shadow: -10px -10px 10px black;
     transition: transform 0.5s ease-out;
     -webkit-transition: transform 0.5s ease-out;
     -moz-transition: transform 0.5s ease-out;
     -ms-transition: transform 0.5s ease-out;
     -o-transition: transform 0.5s ease-out;
+    outline: none;
+    border: 0PX;
 }
-#btn1{
+
+#btn1 {
     background-color: red;
 
 }
-.roll:focus{
-    /* border: 2px solid white; */
+
+.roll:active {
+  
     transform: rotate(360deg) rotateX(360deg) rotateY(360deg);
     -webkit-transform: rotate(360deg) rotateX(360deg) rotateY(360deg);
     -moz-transform: rotate(360deg) rotateX(360deg) rotateY(360deg);
@@ -74,7 +82,7 @@
     -o-transform: rotate(360deg) rotateX(360deg) rotateY(360deg);
 }
 
-.active{
+.active {
     border: 2px solid white;
     border-radius: 20px;
     -webkit-border-radius: 20px;
@@ -83,18 +91,21 @@
     -o-border-radius: 20px;
 }
 
-#btn2{
+
+#btn2 {
     background-color: yellow;
     color: black;
 }
-#btn3{
-    background-color:  green;
+
+#btn3 {
+    background-color: green;
 }
-#btn4{
+
+#btn4 {
     background-color: blue;
 }
 
-#btn5{
+#btn5 {
     padding: 5px;
     height: 40px;
     width: 120px;
@@ -107,7 +118,8 @@
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
 }
-#btn6{
+
+#btn6 {
     padding: 5px;
     height: 40px;
     width: 120px;
@@ -121,33 +133,46 @@
     -o-border-radius: 20px;
 }
 
-#btn5:hover{
+.btn span{
+    font-size: 0.8rem;
+    margin: 5px;
+}
+
+#btn5:hover {
     border: 2px solid white;
 }
-#btn6:hover{
+
+#btn6:hover {
     border: 2px solid white;
 }
 
 
-.main p{
+.main p {
     font-size: 1.8rem;
+}
+
+#pl_turn{
+    margin: 8px;
+    align-self: center;
+    height: 10px;
 }
 
 
 @media only screen and (max-width: 600px) {
-   
-    .board{
-    margin-top: 40px;
-    width: 90vw;
-    height: 300px;
-   }
 
-   button{
-    height: 60px;
-    width: 60px;
-   }
-   .main p{
-    margin-top: 10px;
-    font-size: 1.4rem;
-   }
-  }
+    .board {
+        margin-top: 40px;
+        width: 90vw;
+        height: 330px;
+        padding: 20px;
+    }
+/* 
+    button {
+        height: 60px;
+        width: 60px;
+    } */
+
+    .main p {
+        font-size: 1rem;
+    }
+}

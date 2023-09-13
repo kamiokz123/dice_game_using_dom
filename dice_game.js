@@ -3,6 +3,8 @@ let score = [0,0,0,0];
 let turn =1;
 let done=false;
 
+console.log("",pl_turn);
+
 
 
 
@@ -15,13 +17,15 @@ function start_game(){
     score=[0,0,0,0]
     btn5.innerHTML="ROLL DICE";
     result.innerHTML="result :";
+    scr.innerHTML=score;
+    pl_turn.innerHTML="player-1 turn";
     //  playDiceGame(round)
 
     btn1.addEventListener("click",tog)
     btn2.addEventListener("click",tog)
     btn3.addEventListener("click",tog)
     btn4.addEventListener("click",tog)
-    btn1.classList.add("active" , "roll")
+    btn1.classList.add("active");
 
 
 }
@@ -76,38 +80,43 @@ function check_result(){
 function tog(e){
 
     if (e.target.id==="btn1"&&turn===1) {
+        // btn1.classList.add("active");
     let pl1= Math.floor((Math.random()*6)+1);
-        e.target.innerHTML=pl1;
+        e.target.innerHTML=`<span>PL-1</span>${pl1}`;
         score[0]+=pl1;
         turn=2;
+        pl_turn.innerHTML="player-2 turn";
         // console.log(e.target.nextElementSibling);
-        e.target.classList.remove("active" , "roll")
-        e.target.nextElementSibling.classList.add("active" , "roll");
+        btn1.classList.remove("active");
+        e.target.nextElementSibling.classList.add("active");
     }
     else if(e.target.id==="btn2"&&turn===2){
         let pl1= Math.floor((Math.random()*6)+1);
-            e.target.innerHTML=pl1;
+            e.target.innerHTML=`<span>PL-2</span>${pl1}`;
             score[1]+=pl1;  
             turn=3;  
-     e.target.classList.remove("active" , "roll");
-     btn3.classList.add("active" , "roll")
+       pl_turn.innerHTML="player-3 turn";
+     e.target.classList.remove("active");
+     btn3.classList.add("active")
 
     }
     else if(e.target.id==="btn3"&&turn===3){
         let pl1= Math.floor((Math.random()*6)+1);
-            e.target.innerHTML=pl1;
+            e.target.innerHTML=`<span>PL-3</span>${pl1}`;
             score[2]+=pl1; 
-            turn=4;   
-        e.target.classList.remove("active" , "roll");
-        btn4.classList.add("active" , "roll")
+            turn=4;
+          pl_turn.innerHTML="player-4 turn";
+        e.target.classList.remove("active");
+        btn4.classList.add("active")
 
     }
     else if(e.target.id==="btn4"&&turn==4){
         let pl1= Math.floor((Math.random()*6)+1);
-            e.target.innerHTML=pl1;
+            e.target.innerHTML=`<span>PL-4</span>${pl1}`;
             score[3]+=pl1; 
             turn=1;   
-            e.target.classList.remove("active" , "roll");
+            pl_turn.innerHTML="Game finished";
+            e.target.classList.remove("active");
             result.innerHTML="Game finished click on check result or start new game";
             btn5.innerHTML="Start new game"
             done=true;
@@ -116,16 +125,3 @@ function tog(e){
 
     return 1;
 }
-
-
-
- 
-
-    
-  
-
-      
-    
-
-
-
